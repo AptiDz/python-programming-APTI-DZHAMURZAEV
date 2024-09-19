@@ -6,4 +6,4 @@ Repo handlar handlar om skapelse om mappar -  Exercises, Code-Along, Labs och Ex
 Uppgiften helt enkelt består av att bli familiär att använda github
 
 AI rapport 1 - Github
-Rapporten är inlagd även via markdown så att den kan laddas upp på Github samt orginal filen med.
+Rapporten dess docx fil är uppladdat och även ny fil via markdown på ipynb fil är inkluderat i Rapport mappen.
