@@ -2,12 +2,15 @@ import math as mt
 import matplotlib.pyplot as plt
 
 
-widths = [] # storing the widths of the pokemon
-heights = [] # storing the heights of the pokemon
-labels = [] # storing the labels of the two pokemon types (0 for Pichu and 1 for Pikachu)
+# storing as lists regarding widths, heights of the pokemon also storing the labels of the two pokemon types (0 for Pichu and 1 for Pikachu)
+widths = []
+heights = [] 
+labels = [] 
+
 
 # Nameing the variable for the datapoints text file
 datapokemon = "datapoints.txt"
+
 
 # Data file opening to read mode
 with open(datapokemon, "r") as datapokemons:
@@ -27,13 +30,16 @@ with open(datapokemon, "r") as datapokemons:
         heights.append(height)
         labels.append(label) 
 
+
 # Creating the lists to store Pichu data        
 pichu_widths = []
 pichu_heights = []
 
+
 # Creating the lists to store Pikachu data        
 pikachu_widths = []
 pikachu_heights = []          
+
 
 # Looping through all data of the labels
 for label in range(len(labels)):
@@ -46,6 +52,7 @@ for label in range(len(labels)):
         pikachu_widths.append(widths[label])
         pikachu_heights.append(heights[label])  
         
+   
 # Creating a scatter plot for Pichus
 plt.scatter(pichu_widths, pichu_heights, color="orange", label="Pichu")
 # Creating a scatter plot for Pikachus
@@ -53,24 +60,26 @@ plt.scatter(pikachu_widths, pikachu_heights, color="yellow", label="Pikachu")
 # Labeling the axes
 plt.xlabel("Width (cm)")        
 plt.ylabel("Height (cm)")   
-# Adds Legends to show which dots represents Pichus and Pikachus
+# Axes values with increment of 1
+x_values = list(range(16, 29))
+y_values = list(range(28, 43))
+# Axes ticks to show the values
+plt.xticks(x_values)
+plt.yticks(y_values)
+# Adds Legends to show which dots aka scatter represents Pichus and Pikachus
 plt.legend()
 # Adds the grid to easier see where the dots are in the axes
 plt.grid()
 # Displaying the plot
 plt.show()
-     
-
-        
- 
 
 
-testpath = "testpoints.txt"
+# Nameing the variable for the testpoints text file
+testpokemon = "testpoints.txt"
 
-with open(testpath, "r") as testpointers:
-    testpointers = testpointers.read()
+# Test file opening to read mode
+with open(testpokemon, "r") as testpokemons:
     
-print(testpointers)
 
 
 
