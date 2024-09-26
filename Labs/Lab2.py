@@ -74,12 +74,21 @@ plt.grid()
 plt.show()
 
 
+# Creating function by recreating euclidean distance formula.
+def euclidean_distance(x1, x2, y1, y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    
+    euc_distance = mt.sqrt((dx + dy)**2)
+    return euc_distance
+
+
+    
 # Nameing the variable for the testpoints text file
 testpokemon = "testpoints.txt"
 
 # Test file opening to read mode
 with open(testpokemon, "r") as testpokemons:
+    print(testpokemons)
+
     
-
-
-
