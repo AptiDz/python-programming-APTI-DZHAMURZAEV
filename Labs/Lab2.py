@@ -4,15 +4,16 @@ import matplotlib.pyplot as plt
 
 widths = [] # storing the widths of the pokemon
 heights = [] # storing the heights of the pokemon
-labels = [] # storing the labels of the two pokemon (0. Pichu or 1. Pikachu)
+labels = [] # storing the labels of the two pokemon types (0 for Pichu and 1 for Pikachu)
 
 # Nameing the variable for the datapoints text file
 datapokemon = "datapoints.txt"
 
 # Data file opening to read mode
 with open(datapokemon, "r") as datapokemons:
-    # Looping through each row of data in the file now called datapokemons
+    # Looping through from start to end on each row of data in the file now called datapokemons
     for data in datapokemons:
+        # Skips the row that starts with string (
         if data.startswith("("):
             continue
         # Spliting the data by commas so it separates lists in width, height and labels
@@ -41,7 +42,7 @@ for label in range(len(labels)):
         pichu_widths.append(widths[label])
         pichu_heights.append(heights[label])
     else:
-        # if Label is anything else its Pikachu (Datapointers didnt have any other label besides 0 or 1)
+        # if Label is anything else its Pikachu (datapokemons) didnt have any other label besides 0 or 1)
         pikachu_widths.append(widths[label])
         pikachu_heights.append(heights[label])  
         
