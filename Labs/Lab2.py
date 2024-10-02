@@ -112,7 +112,7 @@ with open(testpokemon, "r") as testpokemons:
         for i in range(len(widths)):
             # Calculationg the euclidean distance between the test point and current data of stored list of pokemon
             distance = euclidean_distance(widths[i], test_width, heights[i], test_height)
-            #
+            # Updating the nearast distance and label to the current data point.
             if distance < nearest_distance:
                 nearest_distance = distance
                 nearest_label = labels[i]
