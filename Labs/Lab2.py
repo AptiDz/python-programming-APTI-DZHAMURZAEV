@@ -1,3 +1,8 @@
+"""
+Lab2 Maskinlära av Apti Dzhamurzaev
+"""
+
+
 import math as mt
 import matplotlib.pyplot as plt
 
@@ -112,7 +117,7 @@ with open(testpokemon, "r") as testpokemons:
         for i in range(len(widths)):
             # Calculationg the euclidean distance between the test point and current data of stored list of pokemon
             distance = euclidean_distance(widths[i], test_width, heights[i], test_height)
-            # Updating the nearast distance and label to the current data point.
+            # Updating the nearest distance and label to the current data point.
             if distance < nearest_distance:
                 nearest_distance = distance
                 nearest_label = labels[i]
@@ -124,9 +129,57 @@ with open(testpokemon, "r") as testpokemons:
         else:
             print(f"Sample with (width, height): ({test_width}, {test_height}) classified as Pikachu")
 
+# Making variables to find nearest distance regarding inputs
+nearest_distance_input = float("inf")
+nearest_label_input = None
+
+# Creating loop that gives user choice to input the data
+while True:
+    print("Wanna find out which of the pokemon you got?")
+    user_choice  = input("input -> y <- for yes ")
+    #Creating ValueError to handle wrong input
+    try: 
+        if user_choice == "y":
+            
+            # Asks user to input width and height and gives error if its other input then positiv numbers
+            user_width = float(input("What is your pokemons testpoints, start with width? "))
+            if user_width <= 0:
+                raise ValueError("Width has to be positiv number")
+            
+            user_height = float(input("What is your pokemons testpoints, start with height? "))
+            if user_height <= 0:
+                raise ValueError("Height has to be positiv number")
+            
+            
+            #Looping through to stored list of pokemon data with goal in finding nearest distance comparison to input value.
+            for i in range(len(widths)):
+                input_distance = euclidean_distance(widths[i], user_width, heights[i], user_height)
+            # Updating the nearest distance input and label to the current data point.           
+            if input_distance < nearest_distance_input:
+                nearest_distance_input = input_distance
+                nearest_label_input = labels[i]
+                
+                
+            # Printing the test points based on the label of its closets distance. 
+            if nearest_label_input == 0:
+                print(f"Sample with (width, height): ({user_width}, {user_height}) classified as Pichu")
+            else:
+                print(f"Sample with (width, height): ({user_width}, {user_height}) classified as Pikachu")
+       
+        # Loop Broken because of the other input than y
+        else: 
+            print("Good Bye")
+        break 
+        
+    except ValueError as err:
+            # Catch and display errors related to invalid input
+            print(f"Input error: {err}. Please enter positiv numbers")    
+            
+       
+
 
 """
-Referenser 
+References 
 1. AI24-Programming (2024, september 20). Hämtad från: https://github.com/pr0fez/AI24-Programmering
 2. Python Infinity(inf) (2023, december 27). GeeksforGeeks. Hämtad från: https://www.geeksforgeeks.org/python-infinity/
 3. Pyhon None Keyword (2023, april 26). GeeksforGeeks. Hämtad från: https://www.geeksforgeeks.org/python-none-keyword/?ref=header_outind
