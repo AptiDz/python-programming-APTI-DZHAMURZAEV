@@ -78,17 +78,59 @@ plt.show()
 def euclidean_distance(x1, x2, y1, y2):
     dx = x2 - x1
     dy = y2 - y1
-    
-    euc_distance = mt.sqrt((dx + dy)**2)
+    # Applying the formula to the function
+    euc_distance = mt.sqrt((dx)**2 + (dy)**2)
     return euc_distance
 
-
-    
+  
 # Nameing the variable for the testpoints text file
 testpokemon = "testpoints.txt"
 
+
 # Test file opening to read mode
 with open(testpokemon, "r") as testpokemons:
-    print(testpokemons)
+    # Looping through each line in the test file
+    for testdata in testpokemons:
+        # Skips the row that starts with string T
+        if testdata.startswith("T"):
+            continue
+        
+        
+        # Creating new variabel with cleaned the imported test file by removing commas and paranthesis
+        cleaned_testdata = testdata.strip().replace("(", "").replace(")", "").replace(",", "")
+        # Creating a new variabel for spliting the string into separate elements applies by whitespace inside a list
+        more_cleaned_testdata = cleaned_testdata.split()
+        # Variabel created in float format. The indexes inside the list goes by that order as index 0 is just a number by order of the test point without any other meaning. 
+        test_width = float(more_cleaned_testdata[1])
+        test_height = float(more_cleaned_testdata[2])
+        # Making variables to find nearest distance for prediction for pokemon. nearest_distance as infinity float to make it bigger than any natural number as a beginning step and nearest_label as none for placeholder. 
+        nearest_distance = float("inf")
+        nearest_label = None 
+        
+        
+        #Looping through to stored list of pokemon data with goal in finding nearest distance.
+        for i in range(len(widths)):
+            # Calculationg the euclidean distance between the test point and current data of stored list of pokemon
+            distance = euclidean_distance(widths[i], test_width, heights[i], test_height)
+            #
+            if distance < nearest_distance:
+                nearest_distance = distance
+                nearest_label = labels[i]
+                        
+        
+        # Printing the test points based on the label of its closets distance. 
+        if nearest_label == 0:
+            print(f"Sample with (width, height): ({test_width}, {test_height}) classified as Pichu")
+        else:
+            print(f"Sample with (width, height): ({test_width}, {test_height}) classified as Pikachu")
 
-    
+
+"""
+Referenser 
+1. AI24-Programming (2024, september 20). Hämtad från: https://github.com/pr0fez/AI24-Programmering
+2. Python Infinity(inf) (2023, december 27). GeeksforGeeks. Hämtad från: https://www.geeksforgeeks.org/python-infinity/
+3. Pyhon None Keyword (2023, april 26). GeeksforGeeks. Hämtad från: https://www.geeksforgeeks.org/python-none-keyword/?ref=header_outind
+4. Python Continue Statement (2023, april 09). Hämtad från: https://www.geeksforgeeks.org/python-continue-statement/?ref=header_outind
+5. Python String replace() Method (2024, jul 05). Hämtad från: https://www.geeksforgeeks.org/python-string-replace/?ref=header_outind
+6. Python | String startswitch() (2023, jul 20). Hämtad från: https://www.geeksforgeeks.org/python-string-startswith/?ref=header_outind
+"""
