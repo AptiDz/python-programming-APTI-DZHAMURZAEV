@@ -1,5 +1,5 @@
 """
-Lab2 Maskinlära av Apti Dzhamurzaev
+Lab2 Maskininlärning av Apti Dzhamurzaev
 """
 
 
