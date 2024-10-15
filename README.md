@@ -9,4 +9,4 @@ Laboration 2 - Maskininlärning
 Uppgift att använda python och få förmåga att implementera förenklad maskinlärningsalgoritm. Klassificera inmattad data efter Pokemon Pichu eller Pikachu
 
 Laboration 3 - Linjär Klassificiering
-TBA
+TBA                 0
