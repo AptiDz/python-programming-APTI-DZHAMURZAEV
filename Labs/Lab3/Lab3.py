@@ -1,3 +1,10 @@
+"""
+Programmering med Python - Laboration 3
+Apti Dzhamurzaev
+"""
+
+# c) -> f)
+
 import matplotlib.pyplot as plt
 import numpy as np
 from itertools import zip_longest
@@ -101,30 +108,21 @@ plt.axvline(0, color="black", lw=0.5)
 plt.show()
 
 
-
 """
 References
-
-https://numpy.org/doc/2.0/reference/generated/numpy.polyfit.html
-https://www.statology.org/line-of-best-fit-python/
-
-
-
-Python – Itertools.zip_longest()
-Last Updated : 27 Feb, 2020 
-https://www.geeksforgeeks.org/python-itertools-zip_longest/
-
-
-matplotlib.pyplot.axhline() in Python
-Last Updated : 12 Apr, 2020 
-https://www.geeksforgeeks.org/matplotlib-pyplot-axhline-in-python/
-
-
-
-Matplotlib.pyplot.axvline() in Python
-Last Updated : 21 Apr, 2020 
-https://www.geeksforgeeks.org/matplotlib-pyplot-axvline-in-python/
-
+1. python-programming-APTI-DZHAMURZAEV (2024, october 15). Github. Retrieved from: https://github.com/AptiDz/python-programming-APTI-DZHAMURZAEV
+2. AI24-Programming (2024, october 15). Github. Retrieved from: https://github.com/pr0fez/AI24-Programmering
+3. Python – List Comprehension (2023, december 27). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/python-list-comprehension/
+4. Python Numpy (2024, july 15). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/python-numpy/
+5. numpy.polyfit. Numpy. Retrieved from: https://numpy.org/doc/2.0/reference/generated/numpy.polyfit.html
+6. Writing to file in Python (2024, october 7). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/writing-to-file-in-python/
+7. How to Plot Line of Best Fit in Python (With Examples) (Bobbitt. Z) (2021, october 5). Statology. Retrieved from: https://www.statology.org/line-of-best-fit-python/
+8. Python | Printing String with double qoutes (2023, april 19). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/python-printing-string-with-double-quotes/
+9. Python - Itertools.zip_longest() (2020, februari 27). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/python-itertools-zip_longest/
+10. matplotlib.pyplot.axhline() in Python (2020, april 12). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/matplotlib-pyplot-axhline-in-python/
+11. Matplotlib.pyplot.axvline() in Python (2020, april 21). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/matplotlib-pyplot-axvline-in-python/
+12. Linear Regression in Python using mumpy + polyfit (with code base) (Mester. T) (2020, februari 20). data36. Retrieved from: https://data36.com/linear-regression-in-python-numpy-polyfit/
+13. What is README.md File? (2024, augusti 27). GeeksforGeeks. Retrieved from: https://www.geeksforgeeks.org/what-is-readme-md-file/
 """
 
 

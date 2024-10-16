@@ -5,7 +5,7 @@ Ove Karlsten 41
 Emma Boden 32
 Ida Håkansson 23
 Ella Ester 41
-Hanna Karlsson 23 
+Hanna Karlsson 23
 Johan Johansson 42
 Sven Erik Lundin 39
 Björn Björnsson 39
@@ -17,3 +17,28 @@ Erik Eriksson 31
 Gore Bord 55
 Jakob Kallander 65
 Fredrika Ulven 10
+Grade F
+10 Fredrika Ulven
+13 Sven Erik Karlsson
+Grade E
+23 Emil Johansson
+23 Hanna Karlsson
+23 Ida Håkansson
+24 Håkan Håkanson
+25 Adam Gustafsson
+Grade D
+31 Erik Eriksson
+31 Jonas Jonasson
+32 Bose Bosseson
+32 Emma Boden
+32 Karl Karlsson
+39 Björn Björnsson
+39 Sven Erik Lundin
+Grade C
+41 Ella Ester
+41 Ove Karlsten
+42 Johan Johansson
+Grade B
+55 Gore Bord
+Grade A
+65 Jakob Kallander
