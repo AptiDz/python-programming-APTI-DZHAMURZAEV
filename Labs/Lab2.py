@@ -23,6 +23,11 @@ with open(datapokemon, "r") as datapokemons:
         # Skips the row that starts with string (
         if data.startswith("("):
             continue
+        # Raphael says: an alternative to extracing the parts separately would be
+        # width, height, label = data.split(",")
+        # rather than store them separately and handle indices, it's more compact to use a single array:
+        # arr.append([float(width), float(height), int(label)]), 
+        
         # Spliting the data by commas so it separates lists in width, height and labels
         dataparts = data.split(",")
         # Converting the strings to float data types. Int for label it does not posses decimals. The indexes for lists goes by that specific order
@@ -40,7 +45,14 @@ pichu_widths = []
 pichu_heights = []
 # Creating the lists to store Pikachu data        
 pikachu_widths = []
-pikachu_heights = []          
+pikachu_heights = []
+
+# Raphael says: The below looks rather strange. 
+#     for index, label in enumerate(labels):
+# would be equivalent
+# Handling indices is a bit hard to read -- 
+# wouldn't be necessary if the data was in a single structure
+
 # Looping through all data of the labels
 for label in range(len(labels)):
     if labels[label] == 0:
@@ -96,6 +108,10 @@ with open(testpokemon, "r") as testpokemons:
         # Variabel created in float format. The indexes inside the list goes by that order as index 0 is just a number by order of the test point without any other meaning. 
         test_width = float(more_cleaned_testdata[1])
         test_height = float(more_cleaned_testdata[2])
+        
+        # Raphel says: Rather tahn implementing an in-line minimum function, sorting the distances and taking elements from the beginning is clearer (as you did later in this file)
+        # In python the performance might even be better.
+        
         # Making variables to find nearest distance for prediction for pokemon. nearest_distance as infinity float to make it bigger than any natural number as a beginning step and nearest_label as none for placeholder. 
         nearest_distance = float("inf")
         nearest_label = None 
