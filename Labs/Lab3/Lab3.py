@@ -62,12 +62,16 @@ def positions_dots_1st_deg(xy, k, m):
 above_list, below_list = positions_dots_1st_deg(x_y, k_, m_)
 
 
+
 # Creating variable write-file which creates and overwrites the csv file. Imported Itertools its zip_longest function to be able to zip the two lists even if the shorter one has reached its end.
 # Writes the costom string instead of None to be able to tell that class 1 has reached its end. 
 with open("labelled_data.csv", "w") as write_file:
-    write_file.write("0, 1\n")
+    write_file.write("0; 1\n")
     for above, below in zip_longest(above_list, below_list, fillvalue ="Class 1 data has ended"):
-            write_file.write(f"\"{above}\",\"{below}\"\n")     
+        if below != "Class 1 data has ended":
+            write_file.write(f"{above[0]}, {above[0]}; {below[0]}, {below[1]}\n")
+        else:
+            write_file.write(f"{above[0]}, {above[0]}; {below}\n")
        
        
  # Variables created with list of comphrensions to make the plt scatter input valid and more readable.                                    
