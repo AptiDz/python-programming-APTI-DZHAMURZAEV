@@ -66,12 +66,13 @@ above_list, below_list = positions_dots_1st_deg(x_y, k_, m_)
 # Creating variable write-file which creates and overwrites the csv file. Imported Itertools its zip_longest function to be able to zip the two lists even if the shorter one has reached its end.
 # Writes the costom string instead of None to be able to tell that class 1 has reached its end. 
 with open("labelled_data.csv", "w") as write_file:
-    write_file.write("0; 1\n")
+    write_file.write("X-axis; Y-axis; Class\n")
     for above, below in zip_longest(above_list, below_list, fillvalue ="Class 1 data has ended"):
         if below != "Class 1 data has ended":
-            write_file.write(f"{above[0]}, {above[0]}; {below[0]}, {below[1]}\n")
+            write_file.write(f"{above[0]}; {above[1]}; above\n")
+            write_file.write(f"{below[0]}; {below[1]}; below\n")
         else:
-            write_file.write(f"{above[0]}, {above[0]}; {below}\n")
+            write_file.write(f"{above[0]}; {above[0]}; above\n")
        
        
  # Variables created with list of comphrensions to make the plt scatter input valid and more readable.                                    
@@ -84,8 +85,8 @@ below_y = [y for _, y in below_list]
 # Changes the size of the plot figure, Adds dots on with different colors to represent the 2 classes and also different color to show their differences. 
 # Plots the line with costom color and line width and moves the legend to different side to make the dots more visable.
 plt.figure(figsize=(10, 6))  
-plt.scatter(above_x, above_y, color="blue", label="Class 0")
-plt.scatter(below_x, below_y, color="red", label="Class 1")
+plt.scatter(above_x, above_y, color="blue", label="Class above")
+plt.scatter(below_x, below_y, color="red", label="Class below")
 plt.plot(x_side, k_ * x_side + m_, color ="green", lw=1)
 plt.legend(loc='upper left')
 
