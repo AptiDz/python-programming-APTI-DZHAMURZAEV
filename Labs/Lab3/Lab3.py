@@ -72,7 +72,7 @@ with open("labelled_data.csv", "w") as write_file:
             write_file.write(f"{above[0]}; {above[1]}; above\n")
             write_file.write(f"{below[0]}; {below[1]}; below\n")
         else:
-            write_file.write(f"{above[0]}; {above[0]}; above\n")
+            write_file.write(f"{above[0]}; {above[1]}; above\n")
        
        
  # Variables created with list of comphrensions to make the plt scatter input valid and more readable.                                    
